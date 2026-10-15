@@ -1,0 +1,121 @@
+id,prompt,category,heuristic_score,label
+1,Hello there! How are you doing today?,chat,0.00,simple
+2,"Good morning, have a great day ahead!",chat,0.00,simple
+3,"Hi, what is your name?",chat,0.00,simple
+4,Tell me a funny dad joke.,chat,0.00,simple
+5,Who created you?,chat,0.00,simple
+6,How is the weather today?,chat,0.00,simple
+7,Tell me a knock knock joke.,chat,0.00,simple
+8,Are you an artificial intelligence?,chat,0.00,simple
+9,Thank you very much for your help!,chat,0.00,simple
+10,What's up?,chat,0.00,simple
+11,Can you say hello in French?,chat,0.00,simple
+12,Give me a random compliment.,chat,0.00,simple
+13,Good evening!,chat,0.00,simple
+14,What are you capable of?,chat,0.00,simple
+15,"Bye bye, see you later!",chat,0.00,simple
+16,What is the capital of France?,factual,0.00,simple
+17,Who was the first person to walk on the moon?,factual,0.00,simple
+18,What is the largest ocean on Earth?,factual,0.00,simple
+19,Who painted the Mona Lisa?,factual,0.00,simple
+20,What is the boiling point of water in Celsius?,factual,0.00,simple
+21,How many continents are there on Earth?,factual,0.00,simple
+22,What is the chemical formula for water?,factual,0.00,simple
+23,Which planet is closest to the Sun?,factual,0.00,simple
+24,Who wrote Romeo and Juliet?,factual,0.00,simple
+25,In which country are the pyramids of Giza?,factual,0.00,simple
+26,What is the national animal of India?,factual,0.00,simple
+27,Who discovered gravity?,factual,0.00,simple
+28,What is the tallest mountain in the world?,factual,0.00,simple
+29,How many days are in a leap year?,factual,0.00,simple
+30,What currency is used in Japan?,factual,0.00,simple
+31,Define photosynthesis in one sentence.,basic_qa,0.00,simple
+32,What is an API?,basic_qa,0.00,simple
+33,List five healthy fruits.,basic_qa,0.00,simple
+34,Is a tomato a fruit or a vegetable?,basic_qa,0.00,simple
+35,What does CPU stand for?,basic_qa,0.00,simple
+36,Give me three benefits of drinking water.,basic_qa,0.00,simple
+37,What is the difference between RAM and ROM?,basic_qa,0.00,simple
+38,Name three renewable energy sources.,basic_qa,0.00,simple
+39,What is HTML used for?,basic_qa,0.00,simple
+40,What is the primary function of the heart?,basic_qa,0.00,simple
+41,Give me a quick recipe for scrambled eggs.,basic_qa,0.00,simple
+42,What is an operating system?,basic_qa,0.00,simple
+43,List 4 primary colors in art.,basic_qa,0.20,simple
+44,What is a noun in English grammar?,basic_qa,0.00,simple
+45,What is the speed of light in vacuum?,basic_qa,0.00,simple
+46,What is 15 + 27?,basic_math,0.20,simple
+47,What is 10 times 8?,basic_math,0.20,simple
+48,How many inches are in a foot?,basic_math,0.00,simple
+49,Convert 100 kilometers to miles.,basic_math,0.20,simple
+50,What is 50 percent of 200?,basic_math,0.20,simple
+51,What is 144 divided by 12?,basic_math,0.20,simple
+52,What is the square root of 64?,basic_math,0.20,simple
+53,How many minutes are in 3 hours?,basic_math,0.20,simple
+54,Convert 5 kilograms to pounds.,basic_math,0.20,simple
+55,What is 9 squared?,basic_math,0.20,simple
+56,Give me 3 tips to wake up early.,general,0.20,simple
+57,Suggest a good book for beginners to read.,general,0.00,simple
+58,How can I improve my typing speed?,general,0.00,simple
+59,What are some good indoor plants?,general,0.00,simple
+60,Give me a simple stretching routine.,general,0.00,simple
+61,What should I pack for a weekend trip?,general,0.00,simple
+62,How to keep my room organized?,general,0.00,simple
+63,Tips for drinking more water daily.,general,0.00,simple
+64,How to stay focused while studying?,general,0.00,simple
+65,What is a good gift for a friend?,general,0.00,simple
+66,"Write code in Python to implement a binary search tree with insert, delete, and find methods.",coding,0.70,complex
+67,Write code for a neural network from scratch using numpy with forward pass and backpropagation.,coding,0.50,complex
+68,Write a complete FastAPI microservice that connects to PostgreSQL using async SQLAlchemy with CRUD routes.,coding,0.00,simple
+69,Implement the Dijkstra shortest path algorithm in C++ using a priority queue.,coding,0.20,simple
+70,Write a React custom hook for handling infinite scroll pagination with debounced scroll listeners.,coding,0.00,simple
+71,Write code in Go to implement a concurrent worker pool using channels and WaitGroups.,coding,0.50,complex
+72,Implement a thread-safe LRU Cache in Python with O(1) get and put operations.,coding,0.20,simple
+73,Write a Dockerfile and docker-compose.yml file for a production-ready Node.js and Redis application.,coding,0.20,simple
+74,Write an SQL query with recursive CTE to traverse an organizational hierarchy tree.,coding,0.00,simple
+75,Write code to implement AES-256 encryption and decryption in Java using javax.crypto.,coding,0.70,complex
+76,Implement a Red-Black tree rebalancing algorithm in Rust.,coding,0.20,simple
+77,Write a Kubernetes StatefulSet manifest for deploying a 3-node MongoDB replica set.,coding,0.20,simple
+78,Debug this Python code and fix the memory leak occurring in the generator pipeline.,coding,0.00,simple
+79,Write an optimized merge sort algorithm in Python and analyze its space complexity.,coding,0.50,complex
+80,Write an asynchronous web scraper in Python using aiohttp and BeautifulSoup with rate limiting.,coding,0.00,simple
+81,Calculate the derivative of f(x) = 3x^2 + 2x - 5 and explain the step by step derivation.,advanced_math,0.90,complex
+82,Derive the Schrödinger wave equation for a particle in a one-dimensional infinite potential well.,advanced_math,0.70,complex
+83,Calculate the eigenvalues and eigenvectors of a 3x3 Hermitian matrix step by step.,advanced_math,0.70,complex
+84,Explain the difference between Rayleigh scattering and Mie scattering in atmospheric optics.,advanced_math,0.50,complex
+85,Solve the differential equation dy/dx + 2y = e^(-x) with the initial condition y(0) = 1.,advanced_math,0.40,simple
+86,Derive the Navier-Stokes equations from conservation of momentum in fluid mechanics.,advanced_math,0.70,complex
+87,Calculate the Fourier transform of a rectangular pulse signal and explain the sinc function output.,advanced_math,0.50,complex
+88,Explain quantum entanglement and Bell inequality tests with mathematical formulations.,advanced_math,0.50,complex
+89,Calculate the volume of a torus using double integration in cylindrical coordinates.,advanced_math,0.50,complex
+90,Explain the mechanism of CRISPR-Cas9 gene editing and potential off-target effects in human therapeutics.,advanced_math,0.70,complex
+91,"First, summarize the plot of Inception. Then, compare its narrative structure to The Matrix.",reasoning,0.70,complex
+92,"First, identify three major flaws in modern monolithic software architecture. Second, propose a microservices migration plan.",reasoning,0.40,simple
+93,"First, calculate the compound interest on 10000 at 7 percent for 5 years. Then, compare it to a simple interest investment.",reasoning,1.00,complex
+94,Analyze the geopolitical implications of renewable energy adoption in developing nations over the next decade.,reasoning,0.50,complex
+95,"Compare and contrast Kubernetes vs Docker Swarm in terms of scalability, complexity, and ecosystem adoption.",reasoning,0.50,complex
+96,Evaluate the trade-offs between consistency and availability in distributed systems according to the CAP theorem.,reasoning,0.70,complex
+97,Synthesize a comprehensive marketing strategy for launching a B2B SaaS platform in European markets.,reasoning,0.70,complex
+98,Analyze the historical causes and economic impacts of the 2008 global financial crisis.,reasoning,0.70,complex
+99,Compare relational databases with graph databases for social network graph analytics.,reasoning,0.50,complex
+100,Evaluate the ethics of autonomous vehicle decision making in unavoidable accident scenarios.,reasoning,0.50,complex
+101,Analyze how transformer attention mechanisms overcome the vanishing gradient problem of recurrent neural networks.,reasoning,0.50,complex
+102,Synthesize the key findings of recent climate change mitigation reports regarding carbon capture technologies.,reasoning,0.50,complex
+103,Compare zero-knowledge proofs with optimistic rollups in Ethereum layer 2 scaling solutions.,reasoning,0.70,complex
+104,"First, analyze the time complexity of QuickSort in best, average, and worst cases. Then, explain randomized pivoting.",reasoning,0.90,complex
+105,Evaluate the architectural differences between RISC-V and ARM processor instruction sets.,reasoning,0.70,complex
+106,Explain the internal memory management and garbage collection mechanisms in the Java Virtual Machine.,technical_depth,0.50,complex
+107,Design an end-to-end event-driven architecture for a high-frequency trading platform handling 1M events per second.,technical_depth,0.20,simple
+108,Explain how Paxos and Raft consensus algorithms achieve distributed agreement during network partitions.,technical_depth,0.50,complex
+109,Analyze the security vulnerabilities in OAuth 2.0 and OpenID Connect implementations and how to prevent token leakage.,technical_depth,0.90,complex
+110,Explain how modern GPU architectures execute warp-level parallelism and handle memory coalescing.,technical_depth,0.70,complex
+111,Design a scalable distributed file storage system similar to Google File System (GFS) with fault tolerance.,technical_depth,0.20,simple
+112,Explain how B-Trees and LSM-Trees differ in disk I/O performance for write-heavy vs read-heavy database workloads.,technical_depth,0.90,complex
+113,Analyze the impact of quantum computing algorithms like Shor and Grover on modern RSA and ECC cryptographic standards.,technical_depth,0.70,complex
+114,Explain the mathematical foundations of Backpropagation Through Time (BPTT) in Recurrent Neural Networks.,technical_depth,0.50,complex
+115,Design a reliable data pipeline architecture for processing petabyte-scale telemetry data using Apache Kafka and Apache Spark.,technical_depth,0.40,simple
+116,Explain the differences between optimistic concurrency control and two-phase locking in distributed transaction databases.,technical_depth,0.70,complex
+117,Analyze the performance trade-offs between WebAssembly and native JavaScript for compute-intensive browser applications.,technical_depth,0.70,complex
+118,Explain how diffusion probabilistic models generate high-fidelity images through reverse Markov chain denoising.,technical_depth,0.70,complex
+119,"Design an end-to-end CI/CD pipeline with automated vulnerability scanning, blue-green deployments, and canary analysis.",technical_depth,0.20,simple
+120,"Analyze the role of transformer positional encodings: compare sinusoidal embeddings, learned embeddings, and RoPE.",technical_depth,0.50,complex

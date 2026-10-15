@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+requests
+streamlit
+python-dotenv
+openai
+pydantic
+pandas
+altair
+codecarbon
+google-genai
+google-generativeai
+scikit-learn
+joblib
+torch
+transformers
