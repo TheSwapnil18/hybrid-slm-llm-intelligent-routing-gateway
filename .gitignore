@@ -23,6 +23,9 @@ emissions.csv
 # Project Archive & Historical Prototypes
 archive/
 
+# Academic Report
+Report/
+
 # Large Model Weights (>100MB)
 *.safetensors
 *.bin
@@ -37,10 +40,3 @@ Desktop.ini
 # IDE & Editor folders
 .vscode/
 .idea/
-
-# Report Scratch / Temporary Files
-Report/__pycache__/
-Report/*_dump.txt
-Report/test_sect.docx
-Report/report_sem7_backup_original.docx
-Report/extracted_images/
