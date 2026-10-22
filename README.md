@@ -12,11 +12,10 @@ An intelligent, multi-provider AI middleware system that dynamically routes user
 - **Configurable Mode:** Toggle between classifiers dynamically via the `CLASSIFIER_MODE` configuration flag without changing any code.
 - **Evaluation Benchmark:** Side-by-side comparative evaluation script (`scripts/evaluate_classifiers.py`) demonstrating 95%+ routing agreement.
 
-### 2. 🛡️ Automatic Cloud Failover (Groq ➔ Google Gemini)
-- **Primary Provider:** Groq API running high-parameter models (`openai/gpt-oss-120b`).
-- **Failover Provider:** Google Gemini API (`gemini-2.5-flash` / `gemini-1.5-flash`).
-- **Resilient Fallback:** If Groq encounters rate-limiting (HTTP 429), timeouts, or service interruptions, the system automatically retries the request using Gemini with a 1-retry maximum.
-- **Provider Transparency:** Every request records the exact serving provider (`groq`, `gemini`, or `none` for local) to SQLite, reflected on the dashboard with visual badges.
+### 2. 🛡️ Dual-Layer Resiliency & Failover (Local ➔ Cloud & Groq ➔ Gemini)
+- **Local-to-Cloud Fallback:** If the local Ollama SLM server is down, unreachable, or encounters an error, the request is not dropped. The router automatically falls back to the Cloud LLM pipeline, sets `fallback_reason = "local_slm_unavailable"`, and processes the prompt seamlessly.
+- **Cloud Provider Failover:** Groq API (`openai/gpt-oss-120b`) acts as primary cloud provider with automatic single-retry failover to Google Gemini (`gemini-2.5-flash`) if rate limits (HTTP 429) or timeouts occur.
+- **Provider & Fallback Transparency:** Every request records the exact serving provider (`groq`, `gemini`, or `none`) and any `fallback_reason` to SQLite, badged in real-time on the Streamlit dashboard.
 
 ### 3. 🌱 Live Carbon & Energy Tracking (CodeCarbon)
 - **Hardware-Measured Local Emissions:** Uses `codecarbon`'s `EmissionsTracker` on local CPU/GPU hardware to record actual energy consumption in **kWh** and emissions in **grams of CO₂** for Ollama requests.
@@ -45,11 +44,18 @@ An intelligent, multi-provider AI middleware system that dynamically routes user
              ┌───────────────┴───────────────┐
       Score < 0.50                    Score >= 0.50
              │                               │
-             ▼                               ▼
-     LOCAL INFERENCE                 CLOUD INFERENCE
-    Ollama (qwen2.5:7b)             Groq (gpt-oss-120b)
-    Hardware Energy Tracking                 │
-     (via CodeCarbon)                [Error / Rate-Limit?]
+             ▼                               │
+     LOCAL INFERENCE                         │
+    Ollama (qwen2.5:7b)                      │
+     [Ollama Down / Error?]                  │
+      ├────── Yes ───────────────────────────┤
+      │      (fallback_reason =              │
+      │       "local_slm_unavailable")       │
+      ▼                                      ▼
+     CodeCarbon Live Hardware         CLOUD INFERENCE
+       Energy Tracking              Groq (gpt-oss-120b)
+             │                               │
+             │                      [Error / Rate-Limit?]
              │                       ├────── Yes ──────┐
              │                       ▼                 ▼
              │                  Groq Success    Failover to Gemini
@@ -59,7 +65,7 @@ An intelligent, multi-provider AI middleware system that dynamically routes user
                              │
                              ▼
                  SQLite Logging (requests_log)
-       (latency, cost, CO2 grams, kWh, cloud_provider)
+    (latency, cost, CO2, kWh, provider, fallback_reason)
                              │
                              ▼
                 Interactive Streamlit Dashboard

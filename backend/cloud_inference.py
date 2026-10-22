@@ -60,6 +60,7 @@ def _call_groq(prompt: str):
         "latency_ms": latency_ms,
         "cost_usd": estimated_cost,
         "provider": "groq",
+        "model_name": model_name,
         "co2_grams": co2_grams,
         "energy_kwh": energy_kwh
     }
@@ -77,12 +78,13 @@ def _call_gemini(prompt: str):
     prompt_tokens = 0
     completion_tokens = 0
 
+    model_name = "gemini-3.8-flash"
     try:
         from google import genai
         client = genai.Client(api_key=api_key)
-        # Using gemini-2.5-flash as the primary fast cloud model
+        # Using gemini-3.8-flash as the primary fast cloud failover model
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model=model_name,
             contents=prompt
         )
         response_text = response.text or ""
@@ -92,7 +94,8 @@ def _call_gemini(prompt: str):
     except ImportError:
         import google.generativeai as genai_legacy
         genai_legacy.configure(api_key=api_key)
-        model = genai_legacy.GenerativeModel("gemini-1.5-flash")
+        model_name = "gemini-1.5-flash"
+        model = genai_legacy.GenerativeModel(model_name)
         response = model.generate_content(prompt)
         response_text = response.text or ""
         if hasattr(response, "usage_metadata") and response.usage_metadata:
@@ -118,6 +121,7 @@ def _call_gemini(prompt: str):
         "latency_ms": latency_ms,
         "cost_usd": estimated_cost,
         "provider": "gemini",
+        "model_name": model_name,
         "co2_grams": co2_grams,
         "energy_kwh": energy_kwh
     }

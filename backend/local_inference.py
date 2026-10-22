@@ -4,7 +4,7 @@ import logging
 
 logger = logging.getLogger("local_inference")
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
+OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
 MODEL_NAME = "qwen2.5:7b"
 
 def generate_local(prompt: str):
@@ -55,7 +55,8 @@ def generate_local(prompt: str):
             "latency_ms": latency_ms,
             "cost_usd": 0.0,  # Local SLM inference has zero API cost
             "co2_grams": co2_grams,
-            "energy_kwh": energy_kwh
+            "energy_kwh": energy_kwh,
+            "model_name": MODEL_NAME
         }
     except requests.exceptions.RequestException as e:
         if tracker is not None:

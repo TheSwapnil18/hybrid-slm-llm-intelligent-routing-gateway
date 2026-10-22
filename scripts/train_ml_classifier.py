@@ -10,12 +10,14 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.metrics import classification_report, accuracy_score
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "training_prompts.csv")
+if not os.path.exists(DATA_PATH):
+    DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "archive", "legacy_datasets", "training_prompts.csv")
 MODEL_DIR = os.path.join(os.path.dirname(__file__), "..", "backend", "saved_models")
 MODEL_FILE = os.path.join(MODEL_DIR, "classifier_model.joblib")
 
 def train_classifier():
     if not os.path.exists(DATA_PATH):
-        print(f"Error: Dataset not found at {DATA_PATH}. Run scripts/generate_training_data.py first.")
+        print(f"Error: Dataset not found at {DATA_PATH}.")
         sys.exit(1)
 
     print("=" * 60)
